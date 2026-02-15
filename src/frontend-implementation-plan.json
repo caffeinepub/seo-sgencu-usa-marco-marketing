@@ -1,0 +1,166 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Exact uploaded logo usage + best-practice SEO across all pages (on-page + technical)",
+  "requirements": [
+    {
+      "id": "REQ-14",
+      "summary": "Use the uploaded logo asset as the single source of truth for header/footer branding and favicon references, with no visual modifications or alternate marks.",
+      "acceptanceCriteria": [
+        "The header and footer render the same uploaded logo image file (single source of truth), and it is not altered via CSS filters or alternate assets.",
+        "The favicon links in frontend/index.html reference the full uploaded logo favicon assets and load correctly in modern browsers.",
+        "No other logo variants are introduced (no monochrome/flat versions) unless they are byte-identical conversions required for favicon sizing."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/brand/BrandLogo.tsx",
+          "operation": "modify",
+          "description": "Ensure the header/footer logo always uses the exact uploaded asset at frontend/public/assets/generated/marco-marketing-logo-uploaded.dim_512x512.png with no CSS filters, recolors, or alternate sources."
+        },
+        {
+          "path": "frontend/src/lib/structuredData.ts",
+          "operation": "modify",
+          "description": "Update structured data logo/image references to use the same uploaded logo asset (frontend/public/assets/generated/marco-marketing-logo-uploaded.dim_512x512.png) instead of any alternate logo file to prevent introducing non-identical logo variants."
+        },
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "Verify favicon/apple-touch-icon links reference the generated favicon assets converted from the uploaded logo: frontend/public/assets/generated/marco-marketing-favicon.dim_256x256.png, frontend/public/assets/generated/marco-marketing-favicon.dim_32x32.png, frontend/public/assets/generated/marco-marketing-favicon.dim_16x16.png, frontend/public/assets/generated/marco-marketing-apple-touch-icon.dim_180x180.png."
+        }
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "summary": "Enforce strict on-page SEO across all pages: keyword-first titles (<60 chars), keyword-containing descriptions (<160 chars), and correct semantic heading hierarchy with a single H1 per page.",
+      "acceptanceCriteria": [
+        "Every route sets a unique meta title and meta description that meet the length and keyword-placement constraints (<60 title chars; <160 description chars; primary keyword included; keyword at start of title).",
+        "Home page continues to target primary keyword \"SEO Agency\" with supporting keyword \"USA\" in title, H1, and intro copy; Logo Design Services page continues to target primary keyword \"Logo Design Services\" with supporting keyword \"USA\" similarly.",
+        "Each page has exactly one H1 and uses headings semantically (H2 sections under H1; H3 subsections under H2; no heading levels used only for visual sizing)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/lib/seo.tsx",
+          "operation": "modify",
+          "description": "Add centralized enforcement for per-route meta title/description constraints (title starts with provided primary keyword intent, <60 chars; description includes keyword intent, <160 chars) by normalizing/trimming values deterministically and preventing stale values on navigation."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Adjust SEO title/description values to comply with strict length constraints while keeping primary keyword \"SEO Agency\" at the start and including supporting keyword \"USA\" in title/H1/intro copy."
+        },
+        {
+          "path": "frontend/src/pages/ServicesPage.tsx",
+          "operation": "modify",
+          "description": "Adjust SEO title/description values to comply with strict length constraints and ensure title begins with the page’s primary keyword intent; verify a single H1 and consistent H2+ hierarchy."
+        },
+        {
+          "path": "frontend/src/pages/services/SeoServicesPage.tsx",
+          "operation": "modify",
+          "description": "Adjust SEO title/description values to comply with strict length constraints and ensure title begins with the page’s primary keyword intent; verify a single H1 and consistent H2+ hierarchy."
+        },
+        {
+          "path": "frontend/src/pages/services/LogoDesignServicesPage.tsx",
+          "operation": "modify",
+          "description": "Adjust SEO title/description values to comply with strict length constraints while keeping primary keyword \"Logo Design Services\" at the start and including supporting keyword \"USA\" in title/H1/intro copy; verify a single H1 and consistent H2+ hierarchy."
+        },
+        {
+          "path": "frontend/src/pages/BlogIndexPage.tsx",
+          "operation": "modify",
+          "description": "Adjust SEO title/description values to comply with strict length constraints and ensure title begins with the page’s primary keyword intent; verify a single H1 and consistent H2+ hierarchy."
+        },
+        {
+          "path": "frontend/src/pages/BlogPostPage.tsx",
+          "operation": "modify",
+          "description": "Update SEO title/description generation to comply with strict length constraints while ensuring the title starts with the post’s primary keyword intent (the post title) and avoids overly long titles."
+        },
+        {
+          "path": "frontend/src/pages/BlogEditorPage.tsx",
+          "operation": "modify",
+          "description": "Add/ensure a single, clear H1 exists in the authenticated editor view and apply strict SEO meta rules (and later noindex handling via the SEO hook) without adding new routes."
+        },
+        {
+          "path": "frontend/src/pages/AboutPage.tsx",
+          "operation": "modify",
+          "description": "Adjust SEO title/description values to comply with strict length constraints and ensure title begins with the page’s primary keyword intent; verify a single H1 and consistent H2+ hierarchy."
+        },
+        {
+          "path": "frontend/src/pages/ProfilePage.tsx",
+          "operation": "modify",
+          "description": "Add/ensure a single, clear H1 exists in the authenticated profile view and apply strict SEO meta rules (and later noindex handling via the SEO hook)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-16",
+      "summary": "Add static technical SEO assets for crawling/indexing by serving robots.txt and sitemap.xml from the frontend public assets.",
+      "acceptanceCriteria": [
+        "/robots.txt is accessible and includes a Sitemap directive pointing to /sitemap.xml.",
+        "/sitemap.xml is accessible, valid XML, and includes canonical URLs for all public pages (at minimum: /, /services, /services/seo, /services/logo-design, /blog, /about).",
+        "Routes that should not be indexed (e.g., authenticated/editor utility pages if applicable) are excluded from sitemap and disallowed in robots.txt as appropriate."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/robots.txt",
+          "operation": "create",
+          "description": "Create a static robots.txt that allows public pages, disallows utility/authenticated routes (e.g., /profile, /blog/editor), and includes a Sitemap directive pointing to /sitemap.xml."
+        },
+        {
+          "path": "frontend/public/sitemap.xml",
+          "operation": "create",
+          "description": "Create a static sitemap.xml listing canonical URLs for all public, indexable routes (at minimum: /, /services, /services/seo, /services/logo-design, /blog, /about) and exclude non-indexable utility routes such as blog editor pages and profile."
+        }
+      ]
+    },
+    {
+      "id": "REQ-17",
+      "summary": "Harden per-route SEO metadata so canonical/OG/Twitter tags and JSON-LD update reliably without duplicates or stale data during client-side navigation.",
+      "acceptanceCriteria": [
+        "Navigating between routes updates document.title, meta description, canonical, OG, and Twitter tags to match the current page (no duplicates and no stale values from prior pages).",
+        "JSON-LD changes with the current route and does not retain previous page schema content after navigation.",
+        "All pages continue to include appropriate structured data (site-wide Organization/WebSite; BlogPosting on blog post pages; FAQPage on the SEO Services page)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/lib/seo.tsx",
+          "operation": "modify",
+          "description": "Update the SEO hook to (1) set/update canonical, Open Graph, and Twitter tags per route, (2) remove tags that are no longer applicable when navigating (prevent stale/duplicated tags), and (3) inject JSON-LD deterministically and remove it when absent (no stale schema between routes)."
+        },
+        {
+          "path": "frontend/src/lib/structuredData.ts",
+          "operation": "modify",
+          "description": "Ensure structured data helpers support the required schemas consistently: site-wide Organization/WebSite across pages, BlogPosting for blog posts, and FAQPage on the SEO Services page; also align logo/image references to the uploaded logo asset."
+        },
+        {
+          "path": "frontend/src/pages/ServicesPage.tsx",
+          "operation": "modify",
+          "description": "Ensure Services page supplies stable canonical + structured data inputs (Organization/WebSite) to the hardened SEO hook so tags and JSON-LD reflect the current route on navigation."
+        },
+        {
+          "path": "frontend/src/pages/BlogIndexPage.tsx",
+          "operation": "modify",
+          "description": "Ensure Blog index supplies stable canonical + structured data inputs (Organization/WebSite) to the hardened SEO hook so tags and JSON-LD reflect the current route on navigation."
+        },
+        {
+          "path": "frontend/src/pages/BlogPostPage.tsx",
+          "operation": "modify",
+          "description": "Ensure Blog post page provides canonical + BlogPosting JSON-LD inputs deterministically per slug so the hardened SEO hook updates tags and schema without carrying over prior post metadata."
+        },
+        {
+          "path": "frontend/src/pages/services/SeoServicesPage.tsx",
+          "operation": "modify",
+          "description": "Ensure SEO Services page provides canonical + combined Organization/WebSite + FAQPage JSON-LD deterministically so the hardened SEO hook updates tags and schema correctly across navigation."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Ensure Home page provides canonical + combined Organization/WebSite JSON-LD deterministically so the hardened SEO hook updates tags and schema correctly across navigation."
+        },
+        {
+          "path": "frontend/src/pages/AboutPage.tsx",
+          "operation": "modify",
+          "description": "Ensure About page provides canonical + Organization/WebSite JSON-LD deterministically so the hardened SEO hook updates tags and schema correctly across navigation."
+        }
+      ]
+    }
+  ]
+}

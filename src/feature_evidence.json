@@ -1,0 +1,98 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-use-the-uploaded-logo-image-exactly-as-is-everywhere-the-brand-logo-or-favicon-is-displayed-with-no-visual-modifications-no-recolors-filters-cropping-differences-or-alternate-marks-ensure-the-header-footer-logo-uses-the-same-uploaded-asset-and-the-favicon-references-the-full-logo-asset-correctly-from-the-html-head",
+      "featureTitle": "Use the uploaded logo image exactly as-is everywhere the brand logo or favicon is displayed, with no visual modifications (no recolors, filters, cropping differences, or alternate marks). Ensure the header/footer logo uses the same uploaded asset and the favicon references the full-logo asset correctly from the HTML head.",
+      "files": [
+        "frontend/src/lib/structuredData.ts"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-14"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-enforce-strict-on-page-seo-rules-across-all-pages-home-services-seo-services-logo-design-services-blog-index-blog-post-blog-editor-about-profile-meta-title-must-start-with-the-page-s-primary-keyword-and-be-60-characters-meta-description-must-include-the-primary-keyword-and-be-160-characters-each-page-must-have-a-single-clear-h1-and-a-logical-h2-h6-hierarchy-with-no-skipped-heading-levels-used-purely-for-styling",
+      "featureTitle": "Enforce strict on-page SEO rules across ALL pages (Home, Services, SEO Services, Logo Design Services, Blog index, Blog post, Blog editor, About, Profile): meta title must start with the page’s primary keyword and be <60 characters; meta description must include the primary keyword and be <160 characters; each page must have a single clear H1 and a logical H2–H6 hierarchy with no skipped heading levels used purely for styling.",
+      "files": [
+        "frontend/src/lib/seo.tsx",
+        "frontend/src/pages/AboutPage.tsx",
+        "frontend/src/pages/BlogEditorPage.tsx",
+        "frontend/src/pages/BlogIndexPage.tsx",
+        "frontend/src/pages/BlogPostPage.tsx",
+        "frontend/src/pages/HomePage.tsx",
+        "frontend/src/pages/ProfilePage.tsx",
+        "frontend/src/pages/ServicesPage.tsx",
+        "frontend/src/pages/services/LogoDesignServicesPage.tsx",
+        "frontend/src/pages/services/SeoServicesPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-15"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-technical-seo-assets-for-crawling-and-indexing-generate-and-serve-a-static-sitemap-xml-and-robots-txt-from-the-frontend-covering-all-public-indexable-routes-in-the-app-and-referencing-the-sitemap-from-robots-txt",
+      "featureTitle": "Add technical SEO assets for crawling and indexing: generate and serve a static /sitemap.xml and /robots.txt from the frontend, covering all public, indexable routes in the app, and referencing the sitemap from robots.txt.",
+      "files": [
+        "frontend/public/robots.txt",
+        "frontend/public/sitemap.xml"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-16"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-harden-the-seo-metadata-implementation-so-it-reliably-produces-correct-non-duplicated-tags-on-navigation-ensure-canonical-open-graph-and-twitter-tags-are-updated-per-route-ensure-json-ld-is-injected-deterministically-without-stale-data-between-route-transitions",
+      "featureTitle": "Harden the SEO metadata implementation so it reliably produces correct, non-duplicated tags on navigation: ensure canonical, Open Graph, and Twitter tags are updated per-route; ensure JSON-LD is injected deterministically without stale data between route transitions.",
+      "files": [
+        "frontend/src/lib/seo.tsx",
+        "frontend/src/lib/structuredData.ts",
+        "frontend/src/pages/AboutPage.tsx",
+        "frontend/src/pages/BlogIndexPage.tsx",
+        "frontend/src/pages/BlogPostPage.tsx",
+        "frontend/src/pages/HomePage.tsx",
+        "frontend/src/pages/ServicesPage.tsx",
+        "frontend/src/pages/services/SeoServicesPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-17"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

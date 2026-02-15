@@ -1,0 +1,123 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-15T20:00:39.356Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 4,
+    "implemented": 4,
+    "items": [
+      {
+        "id": "REQ-14",
+        "summary": "Use the uploaded logo image exactly as-is everywhere the brand logo or favicon is displayed, with no visual modifications (no recolors, filters, cropping differences, or alternate marks). Ensure the header/footer logo uses the same uploaded asset and the favicon references the full-logo asset correctly from the HTML head.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/brand/BrandLogo.tsx",
+          "frontend/src/lib/structuredData.ts",
+          "frontend/index.html"
+        ],
+        "matchedFiles": [
+          "frontend/src/lib/structuredData.ts"
+        ]
+      },
+      {
+        "id": "REQ-15",
+        "summary": "Enforce strict on-page SEO rules across ALL pages (Home, Services, SEO Services, Logo Design Services, Blog index, Blog post, Blog editor, About, Profile): meta title must start with the page’s primary keyword and be <60 characters; meta description must include the primary keyword and be <160 characters; each page must have a single clear H1 and a logical H2–H6 hierarchy with no skipped heading levels used purely for styling.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/lib/seo.tsx",
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/pages/ServicesPage.tsx",
+          "frontend/src/pages/services/SeoServicesPage.tsx",
+          "frontend/src/pages/services/LogoDesignServicesPage.tsx",
+          "frontend/src/pages/BlogIndexPage.tsx",
+          "frontend/src/pages/BlogPostPage.tsx",
+          "frontend/src/pages/BlogEditorPage.tsx",
+          "frontend/src/pages/AboutPage.tsx",
+          "frontend/src/pages/ProfilePage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/lib/seo.tsx",
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/pages/ServicesPage.tsx",
+          "frontend/src/pages/services/SeoServicesPage.tsx",
+          "frontend/src/pages/services/LogoDesignServicesPage.tsx",
+          "frontend/src/pages/BlogIndexPage.tsx",
+          "frontend/src/pages/BlogPostPage.tsx",
+          "frontend/src/pages/BlogEditorPage.tsx",
+          "frontend/src/pages/AboutPage.tsx",
+          "frontend/src/pages/ProfilePage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-16",
+        "summary": "Add technical SEO assets for crawling and indexing: generate and serve a static /sitemap.xml and /robots.txt from the frontend, covering all public, indexable routes in the app, and referencing the sitemap from robots.txt.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/public/robots.txt",
+          "frontend/public/sitemap.xml"
+        ],
+        "matchedFiles": [
+          "frontend/public/robots.txt",
+          "frontend/public/sitemap.xml"
+        ]
+      },
+      {
+        "id": "REQ-17",
+        "summary": "Harden the SEO metadata implementation so it reliably produces correct, non-duplicated tags on navigation: ensure canonical, Open Graph, and Twitter tags are updated per-route; ensure JSON-LD is injected deterministically without stale data between route transitions.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/lib/seo.tsx",
+          "frontend/src/lib/structuredData.ts",
+          "frontend/src/pages/ServicesPage.tsx",
+          "frontend/src/pages/BlogIndexPage.tsx",
+          "frontend/src/pages/BlogPostPage.tsx",
+          "frontend/src/pages/services/SeoServicesPage.tsx",
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/pages/AboutPage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/lib/seo.tsx",
+          "frontend/src/lib/structuredData.ts",
+          "frontend/src/pages/ServicesPage.tsx",
+          "frontend/src/pages/BlogIndexPage.tsx",
+          "frontend/src/pages/BlogPostPage.tsx",
+          "frontend/src/pages/services/SeoServicesPage.tsx",
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/pages/AboutPage.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/public/assets/generated/marco-marketing-apple-touch-icon.dim_180x180.png",
+    "frontend/public/assets/generated/marco-marketing-favicon.dim_16x16.png",
+    "frontend/public/assets/generated/marco-marketing-favicon.dim_256x256.png",
+    "frontend/public/assets/generated/marco-marketing-favicon.dim_32x32.png",
+    "frontend/public/assets/generated/marco-marketing-logo-uploaded.dim_512x512.png",
+    "frontend/public/robots.txt",
+    "frontend/public/sitemap.xml",
+    "frontend/src/lib/seo.tsx",
+    "frontend/src/lib/structuredData.ts",
+    "frontend/src/pages/AboutPage.tsx",
+    "frontend/src/pages/BlogEditorPage.tsx",
+    "frontend/src/pages/BlogIndexPage.tsx",
+    "frontend/src/pages/BlogPostPage.tsx",
+    "frontend/src/pages/HomePage.tsx",
+    "frontend/src/pages/ProfilePage.tsx",
+    "frontend/src/pages/ServicesPage.tsx",
+    "frontend/src/pages/services/LogoDesignServicesPage.tsx",
+    "frontend/src/pages/services/SeoServicesPage.tsx",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-15T20:00:39.352Z",
+  "summary": "Diff implements technical SEO assets (/robots.txt, /sitemap.xml) and enhances per-route SEO tag management via a useSEO hook plus structured data helpers. However, the logo/favicon requirements are not fully evidenced (no index.html favicon updates or converted assets shown), and strict on-page SEO constraints across all routes (keyword-first titles/descriptions, heading hierarchy) are only partially evidenced from the provided page snippets.",
+  "missing_requirements": [
+    {
+      "id": "REQ-14",
+      "requirement": "Use the uploaded logo image exactly as-is everywhere the brand logo or favicon is displayed; header/footer use same asset; favicon links in frontend/index.html reference the full uploaded favicon assets; no other logo variants introduced.",
+      "reason": "The diff summary does not show any changes to frontend/index.html to update favicon link tags, nor does it show the converted favicon/logo image files being added. Header/footer/logo component changes are only described in a summary file, not evidenced with actual diff content, so correct single-source logo usage and lack of CSS alteration cannot be verified.",
+      "evidence": [
+        "frontend-file-summaries.txt",
+        "(no diff shown for frontend/index.html)",
+        "(no added image assets shown in diff summary)"
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "requirement": "Enforce strict on-page SEO rules across ALL pages: title keyword-first and <60 chars; description includes primary keyword and <160 chars; exactly one H1; logical H2–H6 hierarchy without skipped levels used for styling.",
+      "reason": "Some pages shown use useSEO with titles/descriptions, but the diff summary does not provide evidence for all required routes (and full page content is truncated), so compliance across ALL pages and heading hierarchy rules cannot be fully verified from the provided diff summary alone. The useSEO hook truncates length but does not evidence enforcement that the primary keyword is included and that the title starts with it per page.",
+      "evidence": [
+        "frontend/src/lib/seo.tsx",
+        "frontend/src/pages/HomePage.tsx",
+        "frontend/src/pages/ServicesPage.tsx",
+        "frontend/src/pages/services/SeoServicesPage.tsx",
+        "frontend/src/pages/services/LogoDesignServicesPage.tsx",
+        "frontend/src/pages/BlogIndexPage.tsx",
+        "frontend/src/pages/BlogPostPage.tsx",
+        "frontend/src/pages/BlogEditorPage.tsx",
+        "frontend/src/pages/AboutPage.tsx",
+        "frontend/src/pages/ProfilePage.tsx"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Brand theme/palette change to a logo-derived blue primary palette in global CSS.",
+      "reason": "BuildRequest focuses on using uploaded logo exactly and SEO best practices; it does not request changing the site’s color system/theme. The diff summary indicates a deliberate palette change in global styles, which is out of scope for the stated requirements.",
+      "evidence": [
+        "frontend-file-summaries.txt (entry for frontend/src/index.css: \"Global styles ... using logo-derived blue palette ...\")"
+      ]
+    }
+  ],
+  "confidence": 0.64,
+  "changed_files": [
+    "frontend-file-summaries.txt",
+    "frontend/public/robots.txt",
+    "frontend/public/sitemap.xml",
+    "frontend/src/lib/seo.tsx",
+    "frontend/src/lib/structuredData.ts",
+    "frontend/src/pages/AboutPage.tsx",
+    "frontend/src/pages/BlogEditorPage.tsx",
+    "frontend/src/pages/BlogIndexPage.tsx",
+    "frontend/src/pages/BlogPostPage.tsx",
+    "frontend/src/pages/HomePage.tsx",
+    "frontend/src/pages/ProfilePage.tsx",
+    "frontend/src/pages/ServicesPage.tsx",
+    "frontend/src/pages/services/LogoDesignServicesPage.tsx",
+    "frontend/src/pages/services/SeoServicesPage.tsx",
+    "project_state.json"
+  ]
+}

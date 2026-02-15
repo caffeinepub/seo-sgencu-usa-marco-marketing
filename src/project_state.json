@@ -1,0 +1,215 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 7,
+  "summary": "Build a professional, SEO/AIO-optimized marketing website for \"SEO Sgencu USA - Marco Marketing\" with core pages (Home, Services with SEO and Logo Design pages, Blog, About, User Profile) and consistent footer contact/social links, using specified keyword targeting for homepage and service pages.",
+  "architectural_notes": [
+    "SEO strategy must include specified primary/supporting keyword targets per page (Home and service pages).",
+    "Footer must be consistent across all pages and include LinkedIn, Instagram, and contact email.",
+    "Brand palette should be derived from the uploaded logo: use the dominant blue as the primary color site-wide, with additional accent colors chosen for best UX.",
+    "Favicon should use the full uploaded logo image (not a simplified mark).",
+    "Use the uploaded logo file exactly as provided (no edits/recoloring/simplification) for all logo placements."
+  ],
+  "known_issues": [
+    "Brand color direction now conflicts with prior constraint to avoid a blue/purple primary palette; proceed using the logo’s dominant blue as primary per user instruction."
+  ],
+  "isFixRequest": true,
+  "imageRequirements": "## Edit Images\n- Convert the uploaded logo file (SEO Services USA - MArco MArkeitng.favicon.webp > marco-marketing-favicon.dim_256x256.png)\n- Convert the uploaded logo file (SEO Services USA - MArco MArkeitng.favicon.webp > marco-marketing-favicon.dim_32x32.png)\n- Convert the uploaded logo file (SEO Services USA - MArco MArkeitng.favicon.webp > marco-marketing-favicon.dim_16x16.png)\n- Convert the uploaded logo file (SEO Services USA - MArco MArkeitng.favicon.webp > marco-marketing-apple-touch-icon.dim_180x180.png)\n- Convert the uploaded logo file (SEO Services USA - MArco MArkeitng.favicon.webp > marco-marketing-logo-uploaded.dim_512x512.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-complete-marketing-website-for-the-agency-brand-name-seo-sgencu-usa-marco-marketing-with-the-following-public-pages-and-navigation-home-services-overview-individual-service-detail-pages-at-minimum-seo-services-and-logo-design-services-blog-index-post-detail-about-and-a-user-profile-page",
+      "title": "Create a complete marketing website for the agency brand name \"SEO Sgencu USA - Marco Marketing\" with the following public pages and navigation: Home, Services (overview), individual Service detail pages (at minimum: SEO Services and Logo Design Services), Blog (index + post detail), About, and a User Profile page.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-an-original-coherent-visual-theme-colors-typography-spacing-and-component-styling-suitable-for-a-professional-usa-focused-seo-marketing-agency-and-enforce-it-consistently-across-all-pages-do-not-use-a-blue-purple-primary-palette",
+      "title": "Apply an original, coherent visual theme (colors, typography, spacing, and component styling) suitable for a professional USA-focused SEO/marketing agency, and enforce it consistently across all pages. Do not use a blue/purple primary palette.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-on-page-seo-basics-across-the-site-unique-page-titles-meta-descriptions-canonical-tags-open-graph-twitter-meta-semantic-heading-structure-single-h1-per-page-descriptive-internal-linking-and-image-alt-text-ensure-the-homepage-targets-primary-keyword-seo-agency-with-supporting-keyword-usa-in-key-on-page-elements-title-h1-intro-copy-and-ensure-the-logo-design-service-page-targets-primary-keyword-logo-design-services-with-supporting-keyword-usa-similarly",
+      "title": "Implement on-page SEO basics across the site: unique page titles, meta descriptions, canonical tags, Open Graph/Twitter meta, semantic heading structure (single H1 per page), descriptive internal linking, and image alt text. Ensure the homepage targets primary keyword \"SEO Agency\" with supporting keyword \"USA\" in key on-page elements (title/H1/intro copy) and ensure the Logo Design service page targets primary keyword \"Logo Design Services\" with supporting keyword \"USA\" similarly.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-technical-seo-aio-friendly-enhancements-json-ld-structured-data-for-organization-site-wide-website-site-wide-and-for-blogposting-on-blog-post-pages-include-an-faq-section-on-the-seo-services-page-and-mark-it-up-with-faqpage-schema",
+      "title": "Add technical SEO + \"AIO\"-friendly enhancements: JSON-LD structured data for Organization (site-wide), WebSite (site-wide), and for BlogPosting on blog post pages; include an FAQ section on the SEO Services page and mark it up with FAQPage schema.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-global-footer-shown-on-every-page-that-includes-the-provided-social-links-and-email-exactly-as-given-linkedin-https-www-linkedin-com-in-seo-services-usa-ali-instagram-https-www-instagram-com-seo-services-usa-email-marcomarketing-ali786-gmail-com",
+      "title": "Add a global footer shown on every page that includes the provided social links and email exactly as given: LinkedIn https://www.linkedin.com/in/seo-services-usa-ali, Instagram https://www.instagram.com/seo.services_usa, Email marcomarketing.ali786@gmail.com.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-services-section-that-reflects-marco-marketing-s-positioning-and-breadth-of-offerings-seo-as-primary-focus-including-at-least-seo-services-ppc-adwords-management-content-management-pr-digital-marketing-branding-logo-design-banner-brochure-design-and-website-design-with-emphasis-on-seo-include-a-packages-pricing-area-that-references-the-provided-google-doc-url-and-presents-the-packages-in-a-clean-scannable-format-tables-cards",
+      "title": "Create a Services section that reflects Marco Marketing’s positioning and breadth of offerings (SEO as primary focus) including at least: SEO Services, PPC/AdWords management, content management, PR/digital marketing, branding, logo design, banner/brochure design, and website design with emphasis on SEO. Include a packages/pricing area that references the provided Google Doc URL and presents the packages in a clean, scannable format (tables/cards).",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-prominent-sections-linking-to-the-provided-external-sites-tools-using-the-exact-urls-https-marcomarketing-my-canva-site-seo-services-usa-seoauditmarco-sfehuapg-manus-space-https-seo-services-usa-marcomarketing-lovable-app-https-674f3940a5f9b-site123-me-https-marcomarketing-usa-lovable-app-https-content-genius-marcomarketing-lovable-app-https-free-seo-audit-tool-marcomarketingagency-usa-lovable-app-present-them-as-external-resources-tools-with-clear-labels-and-outbound-link-ux-open-in-new-tab-external-icon",
+      "title": "Add prominent sections linking to the provided external sites/tools, using the exact URLs: https://marcomarketing.my.canva.site/seo-services-usa, seoauditmarco-sfehuapg.manus.space, https://seo-services-usa-marcomarketing.lovable.app, https://674f3940a5f9b.site123.me, https://marcomarketing-usa.lovable.app, https://content-genius-marcomarketing.lovable.app, https://free-seo-audit-tool-marcomarketingagency-usa.lovable.app. Present them as external resources/tools with clear labels and outbound-link UX (open in new tab, external icon).",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-user-authentication-using-internet-identity-and-a-user-profile-feature-users-can-sign-in-view-their-profile-and-edit-basic-fields-e-g-display-name-company-name-website-url-and-short-bio-persist-profiles-in-the-motoko-backend-keyed-by-the-user-principal",
+      "title": "Implement user authentication using Internet Identity and a user profile feature: users can sign in, view their profile, and edit basic fields (e.g., display name, company name, website URL, and short bio). Persist profiles in the Motoko backend keyed by the user Principal.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-blog-feature-backed-by-the-motoko-canister-public-read-access-for-listing-and-viewing-posts-authenticated-users-can-create-posts-authenticated-authors-can-edit-delete-their-own-posts-each-post-supports-title-slug-excerpt-content-rich-text-via-markdown-or-simplified-editor-tags-createdat-updatedat-and-author-principal-optional-author-display-name",
+      "title": "Implement a Blog feature backed by the Motoko canister: public read access for listing and viewing posts; authenticated users can create posts; authenticated authors can edit/delete their own posts. Each post supports: title, slug, excerpt, content (rich text via Markdown or simplified editor), tags, createdAt/updatedAt, and author principal + optional author display name.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-required-static-image-assets-by-generating-a-small-brand-set-logo-hero-service-icons-and-render-them-in-the-ui-from-frontend-public-assets-generated-do-not-serve-images-from-the-backend",
+      "title": "Add required static image assets by generating a small brand set (logo + hero + service icons) and render them in the UI from frontend/public/assets/generated (do not serve images from the backend).",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-site-wide-theme-tokens-to-use-the-dominant-blue-from-the-uploaded-logo-as-the-primary-brand-color-across-the-entire-website-light-dark-themes-and-choose-1-2-supporting-accent-colors-derived-from-the-same-logo-that-improve-ux-e-g-link-hover-states-highlights-while-maintaining-readable-contrast",
+      "title": "Update the site-wide theme tokens to use the dominant blue from the uploaded logo as the primary brand color across the entire website (light + dark themes), and choose 1–2 supporting accent colors derived from the same logo that improve UX (e.g., link/hover states, highlights) while maintaining readable contrast.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-the-site-favicon-with-the-full-uploaded-logo-image-and-ensure-the-favicon-is-referenced-from-the-html-head-so-browsers-load-it-correctly",
+      "title": "Replace the site favicon with the full uploaded logo image and ensure the favicon is referenced from the HTML head so browsers load it correctly.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-use-the-uploaded-logo-image-as-the-site-s-displayed-brand-logo-header-footer-so-the-visual-identity-matches-the-favicon-logo-the-user-provided",
+      "title": "Use the uploaded logo image as the site’s displayed brand logo (header/footer) so the visual identity matches the favicon/logo the user provided.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-use-the-uploaded-logo-image-exactly-as-is-everywhere-the-brand-logo-or-favicon-is-displayed-with-no-visual-modifications-no-recolors-filters-cropping-differences-or-alternate-marks-ensure-the-header-footer-logo-uses-the-same-uploaded-asset-and-the-favicon-references-the-full-logo-asset-correctly-from-the-html-head",
+      "title": "Use the uploaded logo image exactly as-is everywhere the brand logo or favicon is displayed, with no visual modifications (no recolors, filters, cropping differences, or alternate marks). Ensure the header/footer logo uses the same uploaded asset and the favicon references the full-logo asset correctly from the HTML head.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-enforce-strict-on-page-seo-rules-across-all-pages-home-services-seo-services-logo-design-services-blog-index-blog-post-blog-editor-about-profile-meta-title-must-start-with-the-page-s-primary-keyword-and-be-60-characters-meta-description-must-include-the-primary-keyword-and-be-160-characters-each-page-must-have-a-single-clear-h1-and-a-logical-h2-h6-hierarchy-with-no-skipped-heading-levels-used-purely-for-styling",
+      "title": "Enforce strict on-page SEO rules across ALL pages (Home, Services, SEO Services, Logo Design Services, Blog index, Blog post, Blog editor, About, Profile): meta title must start with the page’s primary keyword and be <60 characters; meta description must include the primary keyword and be <160 characters; each page must have a single clear H1 and a logical H2–H6 hierarchy with no skipped heading levels used purely for styling.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-technical-seo-assets-for-crawling-and-indexing-generate-and-serve-a-static-sitemap-xml-and-robots-txt-from-the-frontend-covering-all-public-indexable-routes-in-the-app-and-referencing-the-sitemap-from-robots-txt",
+      "title": "Add technical SEO assets for crawling and indexing: generate and serve a static /sitemap.xml and /robots.txt from the frontend, covering all public, indexable routes in the app, and referencing the sitemap from robots.txt.",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-harden-the-seo-metadata-implementation-so-it-reliably-produces-correct-non-duplicated-tags-on-navigation-ensure-canonical-open-graph-and-twitter-tags-are-updated-per-route-ensure-json-ld-is-injected-deterministically-without-stale-data-between-route-transitions",
+      "title": "Harden the SEO metadata implementation so it reliably produces correct, non-duplicated tags on navigation: ensure canonical, Open Graph, and Twitter tags are updated per-route; ensure JSON-LD is injected deterministically without stale data between route transitions.",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create full website for \"SEO Sgencu USA - Marco Marketing\" optimized for UX, SEO (content/on-page/technical), and AIO",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Implement required site pages: Home, Services (SEO-focused), Logo Design Services page, Blog section, About page, and User Profile page",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Apply keyword targeting rules: Home primary \"SEO Agency\" + supporting \"USA\"; Logo Design page primary \"Logo Design Services\" + supporting \"USA\" (and similar approach for service pages)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Add social media links (LinkedIn, Instagram) and email to the footer of every page",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Incorporate/feature provided external links and tools (Content Genius and Free SEO Audit Tool) within the site as appropriate",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Generate site content aligned to Marco Marketing positioning and services, using provided SEO/PPC packages doc as reference",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Update site-wide visual theme to use logo-derived brand colors (dominant blue as primary plus UX-friendly accents) and set favicon to the full uploaded logo",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Use the uploaded logo exactly as-is across the site (no modifications), including wherever the brand logo is displayed",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Apply best-practice on-page + technical SEO across all pages: meta title (<60 chars, primary keyword at start), meta description (<160 chars incl. primary keyword), heading structure (H1–H6), UX/technical SEO incl. sitemap.xml, robots.txt, rich snippets/structured data (schema)",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "SEO Sgencu USA - Marco Marketing",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
